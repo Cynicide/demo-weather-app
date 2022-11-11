@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+*.ps1
+__pycache__
+pyvenv.cfg
+Lib/*
+*.lock.hcl
+Scripts
+.terraform
+*tfstate*
