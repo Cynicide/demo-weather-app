@@ -1,7 +1,7 @@
 
 import logging, sys, json, os
 from libs import weather as wt
-from flask import Flask, request, make_response, jsonify
+from flask import Flask, request, make_response, jsonify, render_template
 from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
@@ -20,7 +20,7 @@ app_apikeys = wt.import_apikeys()
 # Default Route
 @app.route('/')
 def root_response():
-    return 'Basic Usage: '
+    return render_template('home.html')
 
 # Weather App Route
 @app.route('/api', methods=["POST"])

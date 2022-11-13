@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href='/static/bootstrap.min.css' />
+        <title>OpenWeather API</title>
+    </head>
+    <body>
+        <h1>OpenWeather API</h1>
+        <p>You can call this service with an appropriate Country (Using <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes">ISO 3166 country codes</a>) and City to receive a weather forecast for the city.  </p>
+        <h2>Sample Query</h2>
+        <p>The api takes two parameters. <code>Country</code> and <code>City</code>. In addition to this you must include a header named <code>apikey</code> with your API Key to authenticate against the API.</p>
+        <code>https://openweather.anthonymurphy.net/api?Country=AU&City=Burwood</code>
+        <p>You should receive output as follows:</p>
+        <pre><code>
+            {
+                "base": "stations",
+                "clouds": {
+                    "all": 75
+                },
+                "cod": 200,
+                "coord": {
+                    "lat": -33.8858,
+                    "lon": 151.1025
+                },
+                "dt": 1668149997,
+                "id": 7839703,
+                "main": {
+                    "feels_like": 294.89,
+                    "humidity": 69,
+                    "pressure": 1009,
+                    "temp": 294.86,
+                    "temp_max": 297.05,
+                    "temp_min": 292.86
+                },
+                "name": "Burwood",
+                "rain": {
+                    "1h": 0.12
+                },
+                "sys": {
+                    "country": "AU",
+                    "id": 2010638,
+                    "sunrise": 1668106024,
+                    "sunset": 1668155529,
+                    "type": 2
+                },
+                "timezone": 39600,
+                "visibility": 10000,
+                "weather": [
+                    {
+                        "description": "light rain",
+                        "icon": "10d",
+                        "id": 500,
+                        "main": "Rain"
+                    }
+                ],
+                "wind": {
+                    "deg": 30,
+                    "speed": 7.72
+                }
+            }
+
+        </code></pre>
+    </body>
+</html>
