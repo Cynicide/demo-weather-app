@@ -41,6 +41,8 @@ In regards to further security measures, certainly a WAF policy attached to the 
 
 ## Metrics and Alarms
 
+At the moment the EKS Cluster is reporting metrics and logs to CloudWatch via the Cloudwatch Agent. 
+
 In terms of metrics the usual metrics apply CPU Usage and Memory both at a Workload Level and a Node Level. In addition to this Network throughput would also be useful in identidying any misconfigured services or external actors attempting high traffic attacks like a DDOS attack. Disk Space metrics are interesting but probably not that important for a workload like this with no State. Excessive data written to a pod should cause a DiskPressure condition that would show up on pod alerts.
 
 At a Microservice level then container restarts is an important metric as it identifies a pod that may be working mostly fine, but have the odd intermittant issue. Any more than 1 or 2 in a 24 hour period would be cause for investigation. In addition to this workloads that are Crashlooping, Errored, Failed and especially Evicted should also raise alarms. Workloads that are Pending for an extending period of time should also raise alarms.  Even the absence of pods might be considered a useful metric.
